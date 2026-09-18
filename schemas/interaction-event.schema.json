@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scubelabs.dev/schemas/interaction-event.schema.json",
+  "title": "Interaction Event Data",
+  "type": "object",
+  "required": ["interaction_id","state"],
+  "properties": {
+    "interaction_id": {"type":"string","minLength":1},
+    "state": {"enum":["CREATED","ACTIVE","QUEUED","HELD","COMPLETED","ABANDONED","FAILED"]},
+    "channel": {"type":["string","null"]},
+    "queue_id": {"type":["string","null"]},
+    "customer_id": {"type":["string","null"]},
+    "reason": {"type":["string","null"]}
+  },
+  "additionalProperties": true
+}
