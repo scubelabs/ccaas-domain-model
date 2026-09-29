@@ -1,6 +1,17 @@
 # CCaaS Domain Model
 
+> **SCubeLabs ecosystem** · [Platform](https://github.com/scubelabs/scubelabs) · [Architecture](https://github.com/scubelabs/ccaas-reference-architecture) · [Domain Model](https://github.com/scubelabs/ccaas-domain-model) · [Mini ACD](https://github.com/scubelabs/carrier-grade-mini-acd) · [SIP Lab](https://github.com/scubelabs/sip-troubleshooting-lab) · [VoxOne](https://github.com/scubelabs/voxone-showcase)
+
+> **Role:** canonical CCaaS language & bounded contexts · **Maturity:** evolving reference model · **Evidence:** schema/contract validation exists; runtime behavior is not claimed
+
 > A canonical, implementation-neutral domain model for modern Contact Center as a Service platforms.
+
+## Role in the SCubeLabs platform
+
+This repository is the **semantic authority** for the platform: the canonical concepts, identifiers, lifecycles and bounded contexts used across APIs, events, persistence and reporting. Runtime repositories may implement these concepts differently, but should not silently redefine their meaning.
+
+It complements the reference architecture: the architecture answers **where responsibility lives**; this model answers **what the platform means** when it says Interaction, Conversation, Session, Segment, RoutingAttempt, Reservation, Recording, Transcript, Evaluation, Schedule or Survey.
+
 
 ## Mission
 
