@@ -13,4 +13,4 @@ A producer emits one documented version per event instance, preserves units/time
 Deprecation should identify replacement contract, producer migration date, consumer deadline and replay implications. Historical events retain their original schema identity.
 
 ## Testing
-Schema examples are illustrative fixtures. Production contract tests should validate envelope + payload, required correlation fields, compatibility against previous fixtures and rejection of known-invalid payloads.
+The repository validates current example envelopes and payloads plus selected known-invalid envelopes in CI. Compatibility across released versions, consumer idempotency and replay still require separate executable tests.

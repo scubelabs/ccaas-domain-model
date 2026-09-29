@@ -116,6 +116,10 @@ glossary/
   canonical-terms.md
 ```
 
+## Contract validation
+
+Run `python -m pip install -r tests/requirements.txt` and `python tests/validate_contracts.py`. CI validates the envelope and event payload examples, schema validity and selected invalid envelopes. This is schema evidence, not runtime consumer/idempotency proof.
+
 ## Status
 
 The repository is an evolving reference model. It distinguishes conceptual architecture from executable/tested implementation and avoids claiming certification or product compatibility that has not been demonstrated.

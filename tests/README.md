@@ -1,6 +1,6 @@
 # Contract Test Plan
 
-This repository contains reference schemas and fixtures; it does not claim an executed CI suite yet.
+The repository now runs schema/fixture validation in CI. Run `python -m pip install -r tests/requirements.txt` and `python tests/validate_contracts.py` locally. This checks schema validity, example envelope and payload compatibility, cross-field interaction IDs and three invalid envelopes; it does not execute a producer or consumer.
 
 A future executable contract test suite should:
 1. validate every example against the canonical envelope and event payload schema;
