@@ -44,10 +44,10 @@ def main():
         if event.get("interaction_id") != event["data"].get("interaction_id"):
             raise AssertionError(f"{path.name}: envelope/payload interaction_id mismatch")
     valid = read(examples[0])
-    for patch in (
-        lambda e: e.pop("event_id"),
-        lambda e: e.update(occurred_at="not-a-date"),
-        lambda e: e.update(event_version=0),
+    for label, patch in (
+        ("missing event_id", lambda e: e.pop("event_id")),
+        ("invalid timestamp", lambda e: e.update(occurred_at="not-a-date")),
+        ("invalid version", lambda e: e.update(event_version=0)),
     ):
         changed = dict(valid)
         patch(changed)
@@ -55,7 +55,7 @@ def main():
             validate(envelope, changed)
         except ValidationError:
             continue
-        raise AssertionError("Known-invalid envelope accepted")
+        raise AssertionError(f"Known-invalid envelope accepted: {label}")
     print(f"Validated {len(schemas)} schemas, {len(examples)} event examples and 3 negative cases")
 
 if __name__ == "__main__":
